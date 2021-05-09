@@ -1,0 +1,103 @@
+<%- include("partials/header") %>
+
+</section>
+<section id="gallery-4" class="gallery-section gallery-style-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-xxl-7 col-xl-8 col-lg-10  mt-50">
+				<div class="section-title mb-40">
+					<h3 class="mb-15">Our Beautiful Menu</h3>
+					<p>Click The Categories To Filter Products!</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="portfolio-button-wrapper">
+					<button class="portfolio-btn active" data-filter="*">All</button>
+					<button class="portfolio-btn" data-filter=".meats">Meats</button>
+					<button class="portfolio-btn" data-filter=".sides">Sides</button>
+					<button class="portfolio-btn" data-filter=".desserts">Desserts</button>
+					<button class="portfolio-btn" data-filter=".plates">Plates</button>
+					<button class="portfolio-btn" data-filter=".no-category">No Category</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row grid gallery-4 meats">
+			<% food.forEach(foodItem=> { %>
+			<% if (["Meats"].includes(foodItem.category)) { %>
+			<div class="col-lg-4 col-md-6 gallery-item meats">
+				<div class="single-gallery">
+					<div class="image">
+						<img src="../img/images/logo.png" alt="">
+					</div>
+					<div class="info">
+						<h5><%= foodItem.name %></h5>
+						<p><strong>Price:</strong> <%= foodItem.price %></p>
+						<p><%= foodItem.shortDescription %> (Meats)</p>
+					</div>
+				</div>
+			</div>
+			<% } %>
+			<% if (["Sides"].includes(foodItem.category)) { %>
+			<div class="col-lg-4 col-md-6 gallery-item sides">
+				<div class="single-gallery">
+					<div class="image">
+						<img src="../img/images/logo.png" alt="">
+					</div>
+					<div class="info">
+						<h5><%= foodItem.name %></h5>
+						<p><strong>Price:</strong> <%= foodItem.price %></p>
+						<p><%= foodItem.shortDescription %> (Sides)</p>
+					</div>
+				</div>
+			</div>
+			<% } %>
+			<% if (["Desserts"].includes(foodItem.category)) { %>
+			<div class="col-lg-4 col-md-6 gallery-item desserts">
+				<div class="single-gallery">
+					<div class="image">
+						<img src="../img/images/logo.png" alt="">
+					</div>
+					<div class="info">
+						<h5><%= foodItem.name %></h5>
+						<p><strong>Price:</strong> <%= foodItem.price %></p>
+						<p><%= foodItem.shortDescription %> (Desserts)</p>
+					</div>
+				</div>
+			</div>
+			<% } %>
+			<% if (["Plates"].includes(foodItem.category)) { %>
+			<div class="col-lg-4 col-md-6 gallery-item plates">
+				<div class="single-gallery">
+					<div class="image">
+						<img src="../img/images/logo.png" alt="">
+					</div>
+					<div class="info">
+						<h5><%= foodItem.name %></h5>
+						<p><strong>Price:</strong> <%= foodItem.price %></p>
+						<p><%= foodItem.shortDescription %> (Plates)</p>
+					</div>
+				</div>
+			</div>
+			<% } %>
+			<% if (["No Category"].includes(foodItem.category)) { %>
+			<div class="col-lg-4 col-md-6 gallery-item no-category">
+				<div class="single-gallery">
+					<div class="image">
+						<img src="../img/images/logo.png" alt="">
+					</div>
+					<div class="info">
+						<h5><%= foodItem.name %></h5>
+						<p><strong>Price:</strong> <%= foodItem.price %></p>
+						<p><%= foodItem.shortDescription %> (No Category)</p>
+					</div>
+				</div>
+			</div>
+			<% } %>
+			<% }) %>
+		</div>
+</section>
+
+<%- include("partials/footer") %>

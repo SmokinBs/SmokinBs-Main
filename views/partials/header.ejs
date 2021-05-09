@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<title>Smokin B's BBQ</title>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" type="image/jpg" href="img/images/bbq.svg" />
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- ========================= CSS here ========================= -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/lineicons.css" />
+	<link rel="stylesheet" href="css/tiny-slider.css" />
+	<link rel="stylesheet" href="css/glightbox.min.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/uikit.css" />
+</head>
+
+<body style="background: #F3F3F3">
+	<div class="preloader">
+		<div class="loader">
+			<div class="spinner">
+				<div class="spinner-container">
+					<div class="spinner-rotator">
+						<div class="spinner-left">
+							<div class="spinner-circle"></div>
+						</div>
+						<div class="spinner-right">
+							<div class="spinner-circle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% if (!isOpen) { %>
+	<div class="alert progress-bar-striped progress-bar-animated" role="alert" style="background-color: #ff2930;">
+		<h6 class="text-center text-light">We are closed but feel free to look around !</h6>
+	</div>
+	<% } else { %>
+	<div class="progress" style="height: 10px;">
+		<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
+			aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+		</div>
+	</div>
+	<% } %>
+
+	<header class="header header-6">
+		<div class="navbar-area">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-12">
+						<nav class="navbar navbar-expand-lg">
+							<a class="navbar-brand" href="/">
+								<img src="img/images/logo.svg" alt="Logo">
+							</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse"
+								data-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6"
+								aria-expanded="false" aria-label="Toggle navigation">
+								<span class="toggler-icon"></span>
+								<span class="toggler-icon"></span>
+								<span class="toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
+								<ul id="nav6" class="navbar-nav ml-auto">
+									<li class="nav-item">
+										<a class="page-scroll" href="/">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="/#reviews">Reviews</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="/menu">Menu</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="/contact">Contact</a>
+									</li>
+								</ul>
+							</div>
+							<div class="header-action d-flex">
+								<div class="header-search">
+									<a> <i class="lni lni-alarm"></i> </a>
+									<div class="info">
+										<h5 class="mb-10">Alerts (<%= alerts.length %>)</h5>
+										<p></p>
+										<hr />
+
+										<% alerts.forEach(alertItem => { %>
+										<h5 class="mb-10"><%= alertItem.title %></h5>
+										<p><%= alertItem.content %> -
+											<%= alertItem.timePosted.toLocaleTimeString() %></p>
+										<hr />
+										<% }) %>
+									</div>
+								</div>
+							</div>
+
+						</nav>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</header>
