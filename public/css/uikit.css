@@ -16,7 +16,7 @@ html {
 
 body {
   font-family: "Heebo", sans-serif;
-  color: #585978;
+  color: #000;
 }
 
 ul {
@@ -512,7 +512,7 @@ p {
 .header.header-1 .navbar-nav .nav-item a {
   font-size: 16px;
   font-weight: 500;
-  color: #585978;
+  color: #785858;
   transition: all 0.3s ease-out 0s;
   padding: 30px 15px;
   position: relative;
@@ -767,7 +767,7 @@ p {
 .header.header-2 .navbar-nav .nav-item a {
   font-size: 16px;
   font-weight: 500;
-  color: #585978;
+  color: #785858;
   transition: all 0.3s ease-out 0s;
   padding: 10px 0px;
   position: relative;
@@ -942,35 +942,34 @@ p {
   background: #ffffff;
 }
 
-.header.header-4 .header-search {
+.header.header-4 .header-action {
   position: relative;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .header.header-4 .header-search {
+  .header.header-4 .header-action {
     position: absolute;
     right: 60px;
   }
 }
 
 @media (max-width: 767px) {
-  .header.header-4 .header-search {
+  .header.header-4 .header-action {
     position: absolute;
     right: 60px;
   }
 }
 
-.header.header-4 .header-search:hover form {
+.header.header-4 .header-action:hover div {
   opacity: 1;
   visibility: visible;
   top: 100%;
 }
 
-.header.header-4 .header-search a {
+.header.header-4 .header-action a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #ffffff;
   font-size: 16px;
   color: #785858;
   display: flex;
@@ -979,7 +978,7 @@ p {
   box-shadow: 0px 5px 25px rgba(218, 211, 211, 0.3);
 }
 
-.header.header-4 .header-search form {
+.header.header-4 .header-action div {
   position: absolute;
   top: 120%;
   right: 0;
@@ -992,12 +991,6 @@ p {
   opacity: 0;
   visibility: hidden;
   z-index: 9;
-}
-
-.header.header-4 .header-search form input {
-  width: 100%;
-  border: 1px solid #E9E9E9;
-  padding: 5px 10px;
 }
 
 .header.header-4 .navbar {
@@ -1094,7 +1087,7 @@ p {
 .header.header-4 .navbar-nav .nav-item a {
   font-size: 16px;
   font-weight: 500;
-  color: #585978;
+  color: #785858;
   transition: all 0.3s ease-out 0s;
   padding: 10px 0px;
   position: relative;
@@ -1345,7 +1338,7 @@ p {
 
 .header.header-6 .header-action a {
   font-size: 16px;
-  color: #585978;
+  color: #785858;
   padding: 12px;
 }
 
@@ -2397,7 +2390,7 @@ p {
 }
 
 .pricing-style-1 .single-pricing h6 {
-  color: #585978;
+  color: #fff;
   margin-bottom: 15px;
 }
 
@@ -2488,7 +2481,7 @@ p {
 }
 
 .pricing-style-2 .single-pricing h6 {
-  color: #585978;
+  color: #fff;
   margin-bottom: 15px;
 }
 
@@ -2528,8 +2521,7 @@ p {
     CONTACT-1 CSS
 ================================ */
 .contact-style-1 {
-  background: #F3F3F3;
-  padding: 100px 0 70px;
+  background: #fff;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -2548,14 +2540,14 @@ p {
 
 .contact-style-1 .contact-form-wrapper form .single-input textarea,
 .contact-style-1 .contact-form-wrapper form .single-input input {
-  background: #ffffff;
+  background: #f3f3f3;
   border-radius: 10px;
   position: relative;
   padding-left: 20px;
   padding-right: 50px;
   width: 100%;
   border: 1px solid transparent;
-  box-shadow: 0px 5px 25px rgba(218, 211, 211, 0.3);
+  box-shadow: 0px 5px 25px rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease-out 0s;
 }
 
@@ -2594,7 +2586,7 @@ p {
 .contact-style-1 .contact-form-wrapper form .form-button button {
   height: 56px;
   background: #ffffff;
-  color: #585978;
+  color: #fff;
 }
 
 .contact-style-1 .contact-form-wrapper form .form-button button:hover {
@@ -2668,7 +2660,7 @@ p {
   padding-left: 20px;
   padding-right: 50px;
   width: 100%;
-  border: 1px solid #585978;
+  border: 1px solid #fff;
   box-shadow: 0px 5px 25px rgba(218, 211, 211, 0.3);
   transition: all 0.3s ease-out 0s;
 }
@@ -2896,7 +2888,7 @@ p {
   color: #323450;
   padding: 10px 10px 0 0;
   margin-left: 82px;
-  border-bottom: 2px solid #585978;
+  border-bottom: 2px solid #fff;
 }
 
 .about-style-1 .about-image {
@@ -3649,7 +3641,7 @@ p {
   padding: 35px 24px;
   transition: all 0.3s ease-out 0s;
   text-align: center;
-  border-bottom: 5px solid #585978;
+  border-bottom: 5px solid #fff;
   box-shadow: 0px 5px 25px rgba(218, 211, 211, 0.3);
   margin-bottom: 30px;
 }
@@ -3666,7 +3658,7 @@ p {
 }
 
 .testimonial-style-6 .single-testimonial .content-wrapper .content .socials li a {
-  background: #585978;
+  background: #fff;
 }
 
 .testimonial-style-6 .single-testimonial .content-wrapper .content .socials li a:hover {
@@ -3736,7 +3728,7 @@ p {
 
 .footer-style-1 .widget-wrapper .footer-widget h6 {
   font-weight: 600;
-  color: #585978;
+  color: #785858;
   margin-bottom: 35px;
   margin-top: 10px;
 }
@@ -3744,7 +3736,7 @@ p {
 .footer-style-1 .widget-wrapper .footer-widget .links li a {
   font-size: 16px;
   line-height: 32px;
-  color: #585978;
+  color: #785858;
 }
 
 .footer-style-1 .widget-wrapper .footer-widget .links li a:hover {
@@ -3850,7 +3842,7 @@ p {
 .footer-style-2 .widget-wrapper .footer-widget .links li a {
   font-size: 16px;
   line-height: 32px;
-  color: #585978;
+  color: #785858;
 }
 
 .footer-style-2 .widget-wrapper .footer-widget .links li a:hover {
@@ -3870,7 +3862,7 @@ p {
 
 .footer-style-2 .widget-wrapper .footer-widget .subscribe-form input::placeholder {
   opacity: .6;
-  color: #585978;
+  color: #785858;
 }
 
 .footer-style-2 .widget-wrapper .footer-widget .subscribe-form input:focus {
@@ -4010,7 +4002,7 @@ p {
   padding: 0 30px;
   border-radius: 10px;
   background: #ffffff;
-  color: #585978;
+  color: #000;
 }
 
 .signup-style-1 .signup-form-wrapper .single-input input::placeholder {
@@ -4087,7 +4079,7 @@ p {
   padding: 0 30px;
   border-radius: 10px;
   background: transparent;
-  color: #585978;
+  color: #000;
 }
 
 .signup-style-2 .signup-form-wrapper .single-input input::placeholder {
@@ -4171,7 +4163,7 @@ p {
   padding: 0 30px;
   border-radius: 10px;
   background: transparent;
-  color: #585978;
+  color: #000;
 }
 
 .signup-style-3 .signup-wrapper .signup-form-wrapper .single-input input::placeholder {
@@ -4224,7 +4216,7 @@ p {
   padding-left: 50px;
   border-radius: 10px;
   background: transparent;
-  color: #585978;
+  color: #000;
 }
 
 .login-style-1 .login-content-wrapper .login-form .single-input input::placeholder {
@@ -4290,7 +4282,7 @@ p {
   padding-left: 50px;
   border-radius: 10px;
   background: transparent;
-  color: #585978;
+  color: #000;
 }
 
 .login-style-2 .login-wrapper .login-content-wrapper .login-form .single-input input::placeholder {

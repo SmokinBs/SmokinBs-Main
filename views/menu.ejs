@@ -1,103 +1,236 @@
-<%- include("partials/header") %>
+<!DOCTYPE html>
+<html class="no-js" lang="">
 
-</section>
-<section id="gallery-4" class="gallery-section gallery-style-4">
-	<div class="container">
-		<div class="row">
-			<div class="col-xxl-7 col-xl-8 col-lg-10  mt-50">
-				<div class="section-title mb-40">
-					<h3 class="mb-15">Our Beautiful Menu</h3>
-					<p>Click The Categories To Filter Products!</p>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<title>Smokin B's BBQ</title>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" type="image/jpg" href="../../../../../../../../img/images/bbq.svg" />
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- ========================= CSS here ========================= -->
+	<link rel="stylesheet" href="../../../../css/bootstrap.min.css" />
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../../../../css/lineicons.css" />
+	<link rel="stylesheet" href="../../../../css/tiny-slider.css" />
+	<link rel="stylesheet" href="../../../../css/glightbox.min.css" />
+	<link rel="stylesheet" href="../../../../css/animate.css" />
+	<link rel="stylesheet" href="../../../../css/uikit.css" />
+</head>
+
+<body style="background: #F3F3F3">
+	<div class="preloader">
+		<div class="loader">
+			<div class="spinner">
+				<div class="spinner-container">
+					<div class="spinner-rotator">
+						<div class="spinner-left">
+							<div class="spinner-circle"></div>
+						</div>
+						<div class="spinner-right">
+							<div class="spinner-circle"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="portfolio-button-wrapper">
-					<button class="portfolio-btn active" data-filter="*">All</button>
-					<button class="portfolio-btn" data-filter=".meats">Meats</button>
-					<button class="portfolio-btn" data-filter=".sides">Sides</button>
-					<button class="portfolio-btn" data-filter=".desserts">Desserts</button>
-					<button class="portfolio-btn" data-filter=".plates">Plates</button>
-					<button class="portfolio-btn" data-filter=".no-category">No Category</button>
+	</div>
+	<% if (!isOpen) { %>
+	<div class="alert progress-bar-striped progress-bar-animated" role="alert" style="background-color: #ff2930;">
+		<h6 class="text-center text-light">We are closed but feel free to look around !</h6>
+	</div>
+	<% } else { %>
+	<div class="progress" style="height: 10px;">
+		<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
+			aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+		</div>
+	</div>
+	<% } %>
+
+	<header class="header header-4">
+		<div class="navbar-area">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-12">
+						<nav class="navbar navbar-expand-lg">
+							<a class="navbar-brand" href="/">
+								<img src="../../../../img/images/logo.svg" alt="Logo" />
+							</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse"
+								data-target="#navbarSupportedContent4" aria-controls="navbarSupportedContent4"
+								aria-expanded="false" aria-label="Toggle navigation">
+								<span class="toggler-icon"></span>
+								<span class="toggler-icon"></span>
+								<span class="toggler-icon"></span>
+							</button>
+
+							<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent4">
+								<ul id="nav4" class="navbar-nav ml-auto">
+									<li class="nav-item">
+										<a class="page-scroll" href="/">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="/#reviews">Reviews</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="/#prices">Prices</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="/menu">Menu</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="/contact">Contact</a>
+									</li>
+								</ul>
+
+							</div>
+							<div class="header-action d-flex">
+								<a href="#" data-toggle="modal" data-target="#cart"> <i class="lni lni-cart"></i> </a>
+							</div>
+
+							<div class="header-action d-flex">
+								<a> <i class="lni lni-alarm"></i> </a>
+								<div class="info">
+									<h5 class="mb-10">Alerts (<%= alerts.length %>)</h5>
+									<hr />
+
+									<% alerts.forEach(alertItem => { %>
+									<h5 class="mb-10"><%= alertItem.title %></h5>
+									<p><%= alertItem.content %> -
+										<%= alertItem.timePosted.toLocaleTimeString() %></p>
+									<hr />
+									<% }) %>
+								</div>
+							</div>
+						</nav>
+					</div>
 				</div>
 			</div>
 		</div>
+	</header>
 
-		<div class="row grid gallery-4 meats">
-			<% food.forEach(foodItem=> { %>
-			<% if (["Meats"].includes(foodItem.category)) { %>
-			<div class="col-lg-4 col-md-6 gallery-item meats">
-				<div class="single-gallery">
-					<div class="image">
-						<img src="../../../../img/images/logo.png" alt="">
-					</div>
-					<div class="info">
-						<h5><%= foodItem.name %></h5>
-						<p><strong>Price:</strong> <%= foodItem.price %></p>
-						<p><%= foodItem.shortDescription %> (Meats)</p>
+	<section id="gallery-4" class="gallery-section gallery-style-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-xxl-7 col-xl-8 col-lg-10  mt-50">
+					<div class="section-title mb-40">
+						<h3 class="mb-15">Our Beautiful Menu</h3>
+						<p>Click The Categories To Filter Products!</p>
 					</div>
 				</div>
 			</div>
-			<% } %>
-			<% if (["Sides"].includes(foodItem.category)) { %>
-			<div class="col-lg-4 col-md-6 gallery-item sides">
-				<div class="single-gallery">
-					<div class="image">
-						<img src="../../../../img/images/logo.png" alt="">
-					</div>
-					<div class="info">
-						<h5><%= foodItem.name %></h5>
-						<p><strong>Price:</strong> <%= foodItem.price %></p>
-						<p><%= foodItem.shortDescription %> (Sides)</p>
-					</div>
-				</div>
-			</div>
-			<% } %>
-			<% if (["Desserts"].includes(foodItem.category)) { %>
-			<div class="col-lg-4 col-md-6 gallery-item desserts">
-				<div class="single-gallery">
-					<div class="image">
-						<img src="../../../../img/images/logo.png" alt="">
-					</div>
-					<div class="info">
-						<h5><%= foodItem.name %></h5>
-						<p><strong>Price:</strong> <%= foodItem.price %></p>
-						<p><%= foodItem.shortDescription %> (Desserts)</p>
-					</div>
-				</div>
-			</div>
-			<% } %>
-			<% if (["Plates"].includes(foodItem.category)) { %>
-			<div class="col-lg-4 col-md-6 gallery-item plates">
-				<div class="single-gallery">
-					<div class="image">
-						<img src="../../../../img/images/logo.png" alt="">
-					</div>
-					<div class="info">
-						<h5><%= foodItem.name %></h5>
-						<p><strong>Price:</strong> <%= foodItem.price %></p>
-						<p><%= foodItem.shortDescription %> (Plates)</p>
-					</div>
-				</div>
-			</div>
-			<% } %>
-			<% if (["No Category"].includes(foodItem.category)) { %>
-			<div class="col-lg-4 col-md-6 gallery-item no-category">
-				<div class="single-gallery">
-					<div class="image">
-						<img src="../../../../img/images/logo.png" alt="">
-					</div>
-					<div class="info">
-						<h5><%= foodItem.name %></h5>
-						<p><strong>Price:</strong> <%= foodItem.price %></p>
-						<p><%= foodItem.shortDescription %> (No Category)</p>
-					</div>
-				</div>
-			</div>
-			<% } %>
-			<% }) %>
-		</div>
-</section>
 
-<%- include("partials/footer") %>
+			<div class="modal fade modal-dialog-centered modal-dialog-scrollable" id="cart" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Cart (<span class="total-count">0</span>)
+							</h5>
+							<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<table class="show-cart table"></table>
+
+							<section id="contact" class="contact-section contact-style-1 mb-20">
+								<div class="container">
+									<div class="row">
+										<div class="col-sm-8">
+											<div class="contact-form-wrapper">
+												<form>
+													<div class="row">
+														<div class="col-md-6">
+															<div class="single-input">
+																<label for="number">Phone
+																	Number</label>
+																<input type="text" id="number" name="number"
+																	class="form-input mb-10 col-md-6 text-dark"
+																	placeholder="(000) 000 - 000">
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="single-input">
+																<label for="timeToDeliver">Time To
+																	Deliver</label>
+																<input type="text" id="timeToDeliver"
+																	name="timeToDeliver"
+																	class="form-input mb-10 col-md-6 text-dark"
+																	placeholder="1pm">
+															</div>
+														</div>
+														<div class="col-md-12">
+															<div class="single-input">
+																<label for="additionalComments">Additional
+																	Comments</label>
+																<textarea name="additionalComments"
+																	id="additionalComments" class="form-input"
+																	placeholder="If you ordered a plate place your meat and side choices here."
+																	rows="6"></textarea>
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<div>Total price: $<span class="total-cart">0</span></div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="clear-cart btn btn-secondary">Clear
+								Cart</button>
+							<button type="button" onclick="checkout()" class="order-now btn btn-danger">Order
+								now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="portfolio-button-wrapper">
+						<button class="portfolio-btn active" data-filter="*">All</button>
+						<button class="portfolio-btn" data-filter=".Meats">Meats</button>
+						<button class="portfolio-btn" data-filter=".Sides">Sides</button>
+						<button class="portfolio-btn" data-filter=".Desserts">Desserts</button>
+						<button class="portfolio-btn" data-filter=".Plates">Plates</button>
+						<button class="portfolio-btn" data-filter=".No-Category">No Category</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="row grid gallery-4">
+				<% food.forEach(foodItem=> { %>
+				<div class="col-lg-4 col-md-6 gallery-item <%= foodItem.category %>">
+					<div class="single-gallery">
+						<div class="image">
+							<img src="../../../../img/images/logo.png" alt="">
+							<div class="overlay">
+								<div class="action">
+									<a href="#" class="add-to-cart" data-name="<%= foodItem.name.replace(" ", "-") %>"
+										data-price="<%= foodItem.price %>"> <i class="lni lni-cart-full"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="info">
+							<h5><%= foodItem.name %></h5>
+							<p><strong>Price:</strong> $<%= foodItem.price %></p>
+							<p><%= foodItem.shortDescription %> (<%= foodItem.category %>)</p>
+						</div>
+					</div>
+				</div>
+
+				<% }) %>
+			</div>
+
+	</section>
+
+	<%- include("partials/footer") %>

@@ -19,6 +19,33 @@ const foodSchema = new mongoose.Schema({
 	}
 });
 
+const orderSchema = new mongoose.Schema({
+	orderContents: {
+		type: Array,
+		required: true
+	},
+	customer: {
+		type: Object,
+		required: true
+	},
+	personalDetails: {
+		type: Object,
+		required: true
+	},
+	totalPrice: {
+		type: Number,
+		required: true
+	},
+	isOrderOpen: {
+		type: Boolean,
+		required: true
+	},
+	orderDate: {
+		type: Date,
+		default: Date.now
+	}
+});
+
 const alertSchema = new mongoose.Schema({
 	title: {
 		type: String,
@@ -36,3 +63,4 @@ const alertSchema = new mongoose.Schema({
 
 module.exports.foodSchema = mongoose.model("BBQFood", foodSchema);
 module.exports.alertSchema = mongoose.model("BBQAlerts", alertSchema);
+module.exports.orderSchema = mongoose.model("BBQOrders", orderSchema);

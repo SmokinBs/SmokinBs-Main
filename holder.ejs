@@ -1,0 +1,59 @@
+<% if (["Meats"].includes(foodItem.category)) { %>
+<% } %>
+
+<% if (["Sides"].includes(foodItem.category)) { %>
+<div class="col-lg-4 col-md-6 gallery-item sides">
+	<div class="single-gallery">
+		<div class="image">
+			<img src="../../../../img/images/logo.png" alt="">
+		</div>
+		<div class="info">
+			<h5><%= foodItem.name %></h5>
+			<p><strong>Price:</strong> <%= foodItem.price %></p>
+			<p><%= foodItem.shortDescription %> (Sides)</p>
+		</div>
+	</div>
+</div>
+<% } %>
+<% if (["Desserts"].includes(foodItem.category)) { %>
+<div class="col-lg-4 col-md-6 gallery-item desserts">
+	<div class="single-gallery">
+		<div class="image">
+			<img src="../../../../img/images/logo.png" alt="">
+		</div>
+		<div class="info">
+			<h5><%= foodItem.name %></h5>
+			<p><strong>Price:</strong> <%= foodItem.price %></p>
+			<p><%= foodItem.shortDescription %> (Desserts)</p>
+		</div>
+	</div>
+</div>
+<% } %>
+<% if (["Plates"].includes(foodItem.category)) { %>
+<div class="col-lg-4 col-md-6 gallery-item plates">
+	<div class="single-gallery">
+		<div class="image">
+			<img src="../../../../img/images/logo.png" alt="">
+		</div>
+		<div class="info">
+			<h5><%= foodItem.name %></h5>
+			<p><strong>Price:</strong> <%= foodItem.price %></p>
+			<p><%= foodItem.shortDescription %> (Plates)</p>
+		</div>
+	</div>
+</div>
+<% } %>
+<% if (["No Category"].includes(foodItem.category)) { %>
+<div class="col-lg-4 col-md-6 gallery-item no-category">
+	<div class="single-gallery">
+		<div class="image">
+			<img src="../../../../img/images/logo.png" alt="">
+		</div>
+		<div class="info">
+			<h5><%= foodItem.name %></h5>
+			<p><strong>Price:</strong> <%= foodItem.price %></p>
+			<p><%= foodItem.shortDescription %> (No Category)</p>
+		</div>
+	</div>
+</div>
+<% } %>
