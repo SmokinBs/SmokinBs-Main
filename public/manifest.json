@@ -1,0 +1,23 @@
+{
+	"name": "Smokin B's BBQ",
+	"short_name": "Smokin B's",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "/img/icons/Icon-196.png",
+			"sizes": "196x196",
+			"type": "image/png",
+			"purpose": "maskable any"
+		},
+		{
+			"src": "/img/icons/Icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable any"
+		}
+	],
+	"theme_color": "#ff2930",
+	"background_color": "#fff",
+	"display": "fullscreen",
+	"orientation": "portrait"
+}
